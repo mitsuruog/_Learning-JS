@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Mitsuruog Learning_js</title>
+</head>
+<body>
+
+    <div class="tasks"></div>
+    
+    <script type="text/x-tmpl" id="tmpl-task-list">
+        <ul class="task-list">
+            <% items.each(function(item){ %>
+                <%= itemTemplate(item) %>
+            <% }); %>
+        </ul>
+    </script>
+    
+    <script type="text/x-tmpl" id="tmpl-task">
+        <li><%= name %></li>
+    </script>
+
+    <script
+    	src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+		<script>
+		if (!window.hasOwnProperty('jQuery')) {
+			document.write('<script src="../../assets/js/jquery-1.8.2.min.js"><\/script>');
+		}
+	</script>
+	<script src="../../assets/js/underscore-min.js"></script>
+	<script src="../../assets/js/backbone-min.js"></script>
+    <script src="main.js"></script>    
+
+</body>
+</html>
