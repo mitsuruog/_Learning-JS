@@ -5,18 +5,45 @@
 <title>Mitsuruog Learning_js</title>
 </head>
 <body>
+    
+    <section id="todoapp">
+        <header id="header">
+            <h1>Todos</h1>
+            <input id="new-todo" placeholder="What needs to be done?" autofocus>
+        </header>
+        <section id="main">
+            <input id="toggle-all" type="checkbox">
+            <label for="toggle-all">Mark all as complate</label>
+            <ul id="todo-list"></ul>
+        </section>
+    </section>
 
+    <script type="text/template" id="tmpl-item">
+        <div class="view">
+            <input type="checkbox" class="toggle" <%= complated ? 'checked' : '' %>/>
+            <label><%- title %></label>
+            <button class="destory"></button>
+        </div>
+        <input class="edit" value="<%- title %>"/>
+    </script>
 
-    <script
-    	src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
-		<script>
+    <script type="text/template" id="tmpl-stats">
+        
+    </script>
+
+    <script	src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"><script>
 		if (!window.hasOwnProperty('jQuery')) {
 			document.write('<script src="../../assets/js/jquery-1.8.2.min.js"><\/script>');
 		}
 	</script>
 	<script src="../../assets/js/underscore-min.js"></script>
 	<script src="../../assets/js/backbone-min.js"></script>
-    <script src="main.js"></script>    
+    <script src="../../assets/js/backbone-localstorage.js"></script>
+    <script src="js/app.js"></script>    
+    <script src="js/models/todo.js"></script>    
+    <script src="js/collections/todos.js"></script>    
+    <script src="js/views/todo.js"></script>    
+    <script src="js/views/main.js"></script>
 
 </body>
 </html>
