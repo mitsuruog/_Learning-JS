@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Mitsuruog Learning_js Guestbook</title>
+    </head>
+    
+    <body>
+        <section id="guestbook">
+            <header id="header">
+                <h1>Guest book</h1>
+                <button id="new-guest">add new guest name</button>
+            </header>
+            <section id="main">
+                <ul id="guest-list"></ul>
+            </section>
+        </section>
+        <script type="text/template" id="tmpl-guest">
+            <li><%= name %></li>
+        </script>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+            < script >
+            if (!window.hasOwnProperty('jQuery')) {
+                document.write('<script src="../../assets/js/jquery-1.8.2.min.js"><\/script>');
+            }
+        </script>
+        <script src="../../assets/js/underscore.js"></script>
+        <script src="../../assets/js/backbone.js"></script>
+        <script src="js/models/guest.js"></script>
+        <script src="js/collections/guestList.js"></script>
+        <script src="js/views/guest.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+
+</html>
