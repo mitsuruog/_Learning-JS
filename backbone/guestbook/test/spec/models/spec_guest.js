@@ -1,4 +1,4 @@
-describe('guest Model spec', function() {
+describe('Tests guestbook model', function() {
     beforeEach(function() {
         this.guest = new GUEST.Model.guest();
     });

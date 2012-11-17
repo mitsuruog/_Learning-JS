@@ -24,9 +24,8 @@ GUEST.View.guest = Backbone.View.extend({
     },
     
     render: function(model){
-        var tmpl = $('#tmpl-guest').html();
-        var $li = _.template(tmpl, model.toJSON());
-        $('#guestbook').append($li);
+        var tmpl = _.template($('#tmpl-guest').html());
+        this.$el.find('#guest-list').append(tmpl(model.toJSON()));
     }
 });
 

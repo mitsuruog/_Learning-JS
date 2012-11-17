@@ -1,4 +1,4 @@
-describe('Tests guestList collection', function(){
+describe('Tests guestbook collection', function(){
     
     beforeEach(function(){
         this.view = new GUEST.View.guest();
@@ -8,6 +8,7 @@ describe('Tests guestList collection', function(){
             });
             
         this.guestList = new GUEST.Collection.guestList(null, {view: this.view});
+        
     });
     
     it('Can add model instance as objects and arrays', function(){
