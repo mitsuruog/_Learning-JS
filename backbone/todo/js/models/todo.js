@@ -1,18 +1,39 @@
 // Todo Model
 // ----------
+$(function() {
 
-TODO.Model.todo = new Backbone.Model.extend({
+    console.log('TODO.Model.todo');
 
-    //初期値
-    defaults:{
-        title : '',
-        complated: false
-    },
-    
-    //Toggle時にTodoのstateをcomplatedにする
-    toggle : function(){
-        this.save({
-            complated: !(this.get('complated'))
-        });
-    }
+    TODO.Model.todo = Backbone.Model.extend({
+
+        //初期値
+        defaults: {
+            title: '',
+            complated: false
+        },
+
+        initialize: function(opts){
+            this.collection = opts.collection;
+            this.order = opts.collection.nextOrder();
+        },
+
+        //Toggle時にTodoのstateをcomplatedにする
+        toggle: function() {
+            this.save({
+                complated: !(this.get('complated'))
+            });
+        },
+        
+        clear: function(){
+            this.destroy();
+        },
+        
+        getTitle: function(){
+            return this.get('title');
+        },
+        getComplated: function(){
+            return this.get('complated');
+        },
+    });
+
 });
