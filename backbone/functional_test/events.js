@@ -5,15 +5,7 @@ describe('Tests Backbone.Events', function() {
     
     beforeEach(function() {
         
-        obj = {
-            count: function(){
-                var count;
-                return function(){
-                    count++;
-                }
-            }
-            
-        };
+        obj = {};
         spies = jasmine.createSpyObj('called', ['hello', 'hellome', 'helloyou', 'all', 'helloonce']);
         
         //Mixin
